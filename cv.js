@@ -1,6 +1,6 @@
 // Données personnelles stockées en JavaScript
 const personalData = {
-    fullName: "ASSANE CISSE NIASS",
+    fullName: "ASSANE CISSE ",
     jobTitle: "Développeur Full Stack",
     phoneNumber: "+221 777787720",
     email: "toutsurorange@gmail.com",
