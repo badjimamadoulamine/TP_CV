@@ -211,3 +211,5 @@ cvData.sections.forEach(sec => {
       contentDiv.style.display === "none" ? "block" : "none";
   });
 });
+
+

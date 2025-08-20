@@ -6,7 +6,18 @@
   color: #333;
   text-align: center; /* centrer les sections */
 }
+.redirection {
+  display: inline-block;
+  margin-right: 1200px;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
 
+.redirection:hover {
+  color: gray;
+}
 .cv-container {
   width: 90%;
   max-width: 900px;
