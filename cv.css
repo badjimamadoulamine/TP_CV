@@ -1,0 +1,249 @@
+#cop {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #241717;
+  color: #333;
+  text-align: center; /* centrer les sections */
+}
+
+.cv-container {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  box-sizing: border-box; /* inclure padding dans largeur */
+}
+
+/* ====== Section Informations Personnelles ====== */
+@keyframes bgAnimation {
+  0% { background: linear-gradient(135deg, #171718, #21CBF3); }
+  25% { background: linear-gradient(135deg, #ff5722, #ff9800); }
+  50% { background: linear-gradient(135deg, #4CAF50, #8BC34A); }
+  75% { background: linear-gradient(135deg, #9C27B0, #E91E63); }
+  100% { background: linear-gradient(135deg, #2196F3, #21CBF3); }
+}
+
+.perso {
+  color: white;
+  padding: 50px 20px;
+  margin: 0 auto; 
+  max-width: 900px;
+  animation: bgAnimation 15s linear infinite;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.perso-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  
+}
+.perso .infos {
+  text-align: left;      /* aligne les infos à gauche */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.perso img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid white;
+  animation: rotateImage 5s linear infinite alternate;
+}
+
+@keyframes rotateImage {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(45deg); }
+}
+
+/* Icônes Informations Personnelles */
+.perso p span.icon {
+  display: inline-block;
+  animation: rotateIcon 5s linear infinite;
+  margin-right: 5px;
+}
+
+/* ====== Sections collées centrées ====== */
+.teste{
+    border: 3px solid #9c27b0; /* Contour violet */
+  background-color: #f3e5f5; /* Fond violet clair */;
+}
+.section {
+  width: 100%;
+  max-width: 900px; 
+  margin: 0 auto;
+  padding: 40px 20px;
+  cursor: default;
+  border-radius: 0; 
+  border-top: 1px solid #ccc; 
+  color: #333; /* texte foncé pour fond blanc */
+  background-color: #ffffff; /* fond blanc */
+  box-sizing: border-box; /* inclure padding dans largeur */
+}
+
+/* Paragraphes alignés à gauche */
+.section p {
+  text-align: left;
+  margin: 5px 0;
+  color: #333; /* texte foncé */
+}
+
+/* Titres avec bordure et ombre */
+.section h2, .perso h2 {
+  font-size: 24px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 5px rgba(100, 46, 150, 0.2);
+  border-radius: 8px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  color: #333; /* titre foncé */
+}
+
+/* Changement de couleur au survol des titres */
+.section h2:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #ff5722;
+  transform: scale(1.05);
+}
+
+/* Icônes qui tournent automatiquement */
+@keyframes rotateIcon {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.icon {
+  display: inline-block;
+  animation: rotateIcon 5s linear infinite;
+  margin-right: 5px;
+}
+
+/* #pied */
+#pied {
+  background: #222;
+  color: white;
+  padding: 20px;
+  border-radius: 0; 
+  margin-top: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Icônes #pied */
+#pied span.icon {
+  display: inline-block;
+  animation: rotateIcon 5s linear infinite;
+  margin: 0 5px;
+}
+
+/* ====== Responsive ====== */
+@media screen and (max-width: 768px) {
+  .perso-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .perso img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .section {
+    padding: 30px 15px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .perso img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+  }
+
+  .section p {
+    font-size: 14px;
+  }
+}
+
+/* Styles pour le mode sombre */
+.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .section {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-top-color: #333;
+}
+
+.dark-mode .section p {
+  color: #e0e0e0;
+}
+
+.dark-mode .section h2 {
+  color: #bb86fc;
+  border-color: #333;
+  background-color: rgba(187, 134, 252, 0.1);
+}
+
+.dark-mode #pied {
+  background: #1e1e1e;
+  border-top: 2px solid #333;
+}
+
+.dark-mode .perso {
+  animation: none;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+}
+
+.dark-mode a {
+  color: #bb86fc;
+}
+
+/* Bouton mode sombre */
+#darkModeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Bouton retour en haut */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(156, 39, 176, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  display: none;
+}
